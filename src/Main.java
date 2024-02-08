@@ -1,18 +1,24 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        //1 завдання
-        int f1=11;
-        int g=2;
-        System.out.println(f1%g);
-        System.out.println((double)f1/g);
-        //2 завдання
-        int f=21;
-        int s=f/10+f%10;
-        System.out.println(s);
-        //3 завдання
-        double k=1.49;
-        int k1=(int)((k%1)*2);
-        int k2=(int)(k1+k);
-        System.out.println(k2);
+        long t = System.currentTimeMillis();
+        int n=10000;
+        int[] r =new int[n];
+        SortBib.rand(r,n);
+        System.out.println(Arrays.toString(r));
+        SortExch.s(r,true);
+        SortBib.rand(r,n);
+        System.out.println(Arrays.toString(r));
+        SortBib.b(r,false);
+        SortBib.rand(r,n);
+        System.out.println(Arrays.toString(r));
+        SortSelectB.bin(r,false);
+        SortBib.rand(r,n);
+        System.out.println(Arrays.toString(r));
+        SortSelectL.l(r,false);
+
+
+        System.out.println(System.currentTimeMillis()-t);
     }
 }
